@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mousemove</title>
+</head>
+<body><div class="main">
+    <div class="move"></div>
+</div>
+<div class="a"><div class="b"><div class="c"> </div> </div>  </div>
+
+    
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Gilroy";
+            box-sizing: border-box;
+        }
+
+        html,body{
+            height: 100px;
+            width: 100px;
+        }
+        .main{
+            position: relative;
+        }
+
+        .a{
+            margin-left: 20px;
+            height: 240px;
+            width: 230px;
+            background-color: #2c10ff;
+            border-radius: 10px;
+            
+        }
+        .b{
+            margin-left: 240px;
+            margin-top: 5px;
+            height: 240px;
+            width: 230px;
+            background-color: #02ff12;
+            border-radius: 10px;
+        }
+        .c{
+            margin-left: 240px;
+            margin-top: 5px;
+            height: 240px;
+            width: 230px;
+            background-color: #ff74d3;
+            border-radius: 10px;
+        }
+
+        .a,.b,.c:hover{
+            transition: 0.3s;
+        }
+
+        .move{
+            height: 100px;
+            width: 100px;
+            background-color: #180202;
+            /* position: relative;*/
+            position: absolute; 
+            border-radius: 8px;
+            transition: cubic-bezier(0.19, 1, 0.22, 1) .5s;
+        }
+
+
+    </style>
+    <script>
+        let a = document.querySelector(".a");
+        let b = document.querySelector(".b");
+        let c = document.querySelector(".c");
+        let move = document.querySelector(".move");
+
+        a.addEventListener("mouseover", () => {
+            a.style.backgroundColor = "red";
+        })
+
+        a.addEventListener("mouseout", () => {
+            a.style.backgroundColor = "blue";
+        })
+
+        b.addEventListener("mouseover", () => {
+            b.style.backgroundColor = "yellow";
+        })
+
+        b.addEventListener("mouseout", () => {
+            b.style.backgroundColor = "green";
+        })
+
+        c.addEventListener("mouseover", () => {
+            c.style.backgroundColor = "black";
+        })
+
+        c.addEventListener("mouseout", () => {
+            c.style.backgroundColor = "pink";
+        })
+
+        window.addEventListener("mousemove", (dets) => {
+           move.style.top = dets.clientY + "px";
+           move.style.left = dets.clientX  + "px";
+        })
+
+    </script>
+</body>
+</html>

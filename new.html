@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+      <button>is dabao woring ke liye</button>
+ </div> 
+     <div class="main">
+        <h2>click to see alert on screen</h2>
+        <button class="bt">woring</button>
+    </div>
+
+
+ <style>
+
+         
+        html,body{
+             width: 100%;
+            height: 100%;
+            background-color: #180067;
+        }
+        #main{
+            padding: 10px;
+            width: 100%;
+            height: 100%;  
+        }
+
+        .card h3{
+            margin-top: 10px;
+        }
+        .card h5{
+            margin-top: 10px;
+        }
+        .card{
+            max-width: 300px;
+            margin-top: 35px;
+            border-radius: 10px;
+            display: inline-block;
+            border: 3px solid #e3e3e3;
+            padding: 20px;
+            color: #ffffff;
+        }
+    
+        .main{
+            padding: 10px;
+            background-color: #000000;
+            color: #ffffff;
+            height: 120px; width: 310px;
+            border-radius: 8px;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+        button{
+            background-color: #b9a5ffd2;
+            color: #000;
+            border-radius: 8px;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+</style>
+         
+    <script>
+ let bt = document.querySelector(".bt");
+let h2 = document.querySelector(".s");
+let secnd = 5;
+
+
+setInterval(function () {
+         if(secnd > 0){
+        secnd--;
+        
+        } else {
+
+        }
+   }, (secnd * 1000)/secnd);
+
+
+ addEventListener("click", function (dets){
+        dets.preventDefault();
+
+    let card = document.createElement("div");
+    card.classList.add("card");
+
+    let h3 = document.createElement("h3");
+    h3.textContent = "WORING !";
+    let h5 = document.createElement("h5");
+    h5.textContent = "this is woring, ha bkl sahi me he c nahi bana ra tuje !!!"
+    let h4 = document.createElement("h4");
+    h4.textContent = `${secnd}s`;
+     card.appendChild(h3);
+     card.appendChild(h5);
+
+     main.appendChild(card);
+
+    });
+</script>
+</body>
+</html>
+

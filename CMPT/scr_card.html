@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crd</title>
+</head>
+<body>
+    <div class="flex flex-col gap-10 item-center">
+        <input type="text" placeholder="sreach..." class= imp >
+        <div class="cards flax gap-10">
+
+            <!-- <div class="card">
+               <img src="img.png" class="bg-img" />
+                   <div class="blurred-layer"></div>
+                      <div class="content">
+                         <h3>user 12345</h3>
+                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, consectetur?</p>
+                     </div>
+             -->
+        </div>
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; width: 100%;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        .card{
+            position: relative;
+            width: 200px; height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,4);
+display: inline-block;
+margin-left: 18px;
+        }
+
+        .bg-img{
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        
+
+        .blurred-layer{
+            position: absolute;
+            bottom: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: bottom;
+            filter: blur(10px);
+            z-index: 1;
+            mask-image: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+
+            -webkit-mask-image: linear-gradient(
+                to top,
+                rgba(0,0,0,1),
+                rgba(0,0,0,0)
+            );
+            -webkit-mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            
+        }
+
+        .content{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: rgb(255, 255, 255);
+            z-index: 2;
+        }
+
+        .content h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .content p{
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            line-height: 1.4;
+        }
+
+        .imp{
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 175px;
+            text-shadow: 5px;
+            background-color: rgb(255, 242, 155);
+            color: #000000;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-left: 44%;
+            margin-top: 150px;
+        }
+
+        /* .cards{
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        gap: 12px;
+        } */
+
+
+    </style>
+    <script>
+        const user = [
+            {
+                name: "zozo raxi",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            },
+            {
+                name: "Binod",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            },
+            {
+                name: "Ronal Do masi",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            },
+            {
+                name: "modi ji",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            },
+            {
+                name: "Binod ",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            },
+            {
+                name: "Sozu bhondu ",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            },
+            {
+                name: "Elon mask",
+                pic: "ex.png",
+                bio: "hey this is a pera, Learn how to become a JavaScript Dev"
+            }
+        ];
+
+       function showUser (arr) {
+        arr.forEach(function (user) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const img = document.createElement("img");
+        img.src = user.pic;
+        img.classList.add("bg-img");
+
+        const blurredLayer = document.createElement("div");
+        blurredLayer.style.backgroundImage = `url(${user.pic})`;
+        blurredLayer.classList.add("blurred-layer");
+
+        const content = document.createElement("div");
+        content.classList.add("content");
+
+        const heading = document.createElement("h3");
+        heading.textContent = user.name;
+
+        const pare = document.createElement("p");
+        pare.textContent = user.bio ;
+
+        content.appendChild(heading);
+        content.appendChild(pare);
+        
+        card.appendChild(img);
+        card.appendChild(blurredLayer);
+        card.appendChild(content);
+
+        document.querySelector(".cards").appendChild(card);
+
+        
+        });
+       }
+       showUser(user);
+
+       
+
+       let imp = document.querySelector(".imp");
+       imp.addEventListener("input", function (){
+        console.log(imp.value);
+        let newUsers = user.filter((usr) => {
+            return usr.name.startsWith(imp.value);
+            
+        });
+
+        document.querySelector(".cards").innerHTML = "";
+        showUser(newUsers);
+
+        if(imp.value == name.value){
+        console.log("all")
+       } else {
+        console.log("not fund")
+       }
+
+       });
+
+       
+    </script>
+</body>
+</html>

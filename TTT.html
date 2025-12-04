@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTT</title>
+</head>
+<body>
+   
+    <style>
+        body{
+            font-family: "Gilroy";
+            background-color: darkblue;
+            justify-items: center;
+            margin-top: 150px;
+        }
+        .main{
+           background-color: #17025d;
+            height: 353px;
+            width: 353px;
+            padding: 20px;
+            display: grid;
+        grid-template-rows: repeat(3, 120px);
+        grid-template-columns: repeat(3, 120px);
+        justify-content: center;
+        }
+
+        #one{
+            font-size: 100px;
+            text-align: center;
+            height: 110px;
+            width: 110px;
+            border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;
+            color: #000;
+        }
+        #two{
+            border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;
+            height: 110px;
+            width: 110px;
+        }
+        #three{
+            
+            border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;
+            height: 110px;
+            width: 110px;
+        }
+        #four{
+            font-size: 100px;
+            color: #000;
+            border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;
+            height: 110px;
+            width: 110px;
+        }
+        #five{
+            
+            border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;
+            height: 110px;
+            width: 110px;
+        }
+        #six{
+border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;            height: 110px;
+            width: 110px;
+        }
+        #sevan{
+            font-size: 100px;
+            color: #000;
+border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;            height: 110px;
+            width: 110px;
+        }
+        #eg{
+border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;            height: 110px;
+            width: 110px;
+        }
+        #nine{
+border: 2px solid rgb(86, 86, 86);
+            background-color: #ffffff;            height: 110px;
+            width: 110px;
+        }
+
+        .main:hover{
+            background-color: rgb(0, 0, 0);
+            transition: 0.3s;
+             height: 360px;
+            width: 360px;
+
+        }
+
+        button:hover{
+            background-color: #3a0a0a;
+        }
+
+    </style>
+     <div class="main">
+        <button id="one"></button>
+        <button id="two"></button>
+        <button id="three"></button>
+        <button id="four"></button>
+        <button id="five"></button>
+        <button id="six"></button>
+        <button id="sevan"></button>
+        <button id="eg"></button>
+        <button id="nine"></button>
+    </div>
+    <script>
+         let main = document.querySelector(".main");
+         let bt = document.querySelectorAll("button");
+         let one = document.querySelector("#one");
+          main.addEventListener("click", (e) => {
+            // console.log(e); 
+           let h3 = document.createElement("h3");
+            h3.textContent = bt[1].value; 
+            one.appendChild(h3);
+        //     if(e.target.tagName === 'BUTTON') {
+        // const buttonValue = e.target.textContent;
+        // console.log(buttonValue);
+        //     }else{
+
+        //     }
+          });
+    </script>
+</body>
+</html>

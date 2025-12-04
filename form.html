@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>info</title>
+</head>
+<body>
+    <style>
+        *{
+            background-color: #ffe6b8;
+        }
+
+        .main{
+            border: 5px solid rgb(20, 0, 101);
+            border-radius: 20px;
+            align-items: center;
+            justify-content: center;
+            display: block;
+            padding: 20px;
+        }
+        
+        #alt{
+            display: none;
+            color: red;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #submit{
+            display: flex;
+            color: #000000;
+            background-color: #fff;
+        }
+
+        input, select{
+            font-size: 24px;
+            border: 2px solid rgb(20, 0, 101);
+            border-radius: 10px;
+            padding: 10px;
+            color: #5e5e5e;
+        }
+        
+
+        input:hover{
+            border: 3px solid rgb(0, 0, 0);
+            transition: 0.1s;
+        }
+        select:hover{
+            border: 3px solid rgb(0, 0, 0);
+            transition: 0.1s;
+        }
+
+
+    </style>
+<div class="main">
+<form autocomplete="off">
+   <div class="nnmm">
+    <input type="text" placeholder="Your name" id="nm">
+    <br>
+    <small id="alt">krupiya apna name daliye "2 se jada axarwala"</small >
+    </div>
+    <br>
+    <input type="number" placeholder="Age" >
+    <br><br>
+    <input type="email" placeholder="Email" >
+    <br><br>
+    <select>
+    <option selected disabled >gendar</option>
+    <option value="male">male</option>
+    <option value="female">female</option>
+    <option value="other">other</option>
+    </select>
+    <br><br>
+    <input type="password" placeholder="Password" >
+    <br><br>
+    <input id="submit" type="submit">
+    </form>
+</div>
+    <script>
+        let nm = document.querySelector("#nm");
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit", (dt) => {
+            dt.preventDefault();
+            
+
+            if (nm.value.length <= 2) {
+                document.querySelector("#alt").style.display = "initial";
+            } else {
+                document.querySelector("#alt").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

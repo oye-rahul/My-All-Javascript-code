@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+*{
+    background-color: black;
+}
+.main h2{
+           display: flex;
+           margin-top: 90px;
+           justify-content: center;
+           font-size:40px;
+           
+}
+.ch{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+#name{
+    font-size: 40px;
+    color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid ;
+}
+#num{
+    font-size: 40px;
+    color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid ;
+}
+
+h2{
+    color: #ffffff;
+}
+
+</style>
+<div class="main">
+<h2>Total Words :<span class="og"> 0</span></h2>
+<div class="ch">
+<input id="name" type="text" placeholder="  Type anything" autocomplete="off">
+<h1>.........</h1>
+<input id="num" type="text" placeholder="  contect " autocomplete="off" >
+</div>
+
+<h2 >Total Words left :<span class="lf" >0</span></h2>
+</div>
+
+    
+<script>
+    let inp = document.querySelector("#name");
+    let num = document.querySelector("#num");
+    let span1 = document.querySelector(".lf");
+    let span2 = document.querySelector(".og");
+
+    num.addEventListener("input", () => {
+        let ck = 10 - num.value.length;
+        if(ck < 0){
+            num.style.color = "red"
+        } else {
+            num.style.color = "white"
+        }
+    })
+    
+    inp.addEventListener("input", ()=>{
+        span2.textContent = inp.value.length;
+        let left = 30 - inp.value.length;
+        span1.textContent = left;
+
+        if(left < 0){
+            span1.style.color = "red"
+        } else {
+            span1.style.color = "white"
+        }
+    });
+
+</script>
+</body>
+</html>

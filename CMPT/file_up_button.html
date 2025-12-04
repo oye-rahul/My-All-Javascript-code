@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id= "main" >
+        <input id="fileinp" type="file">
+        <div>
+            <button id="btn">Upload</button>
+        </div>
+     </div>
+<style>
+    *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           
+        }
+         
+        html,body{
+             width: 100%;
+            height: 100%;
+        }
+           #main{
+            width: 100%;
+            height: 100%;
+            background-color: #2b0070;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #btn{
+            padding: 12px 22px;
+            font-size: 30px;
+            color: #000;
+            background-color: #52ddf9;
+            border-radius: 15px;
+        }
+
+        #btn:hover{
+            background-color: #007474;
+            color: #f9f5f5;
+            transition: 0.3s;
+            font-size: 33px;
+        }
+        input{
+            display: none;
+        }
+</style>
+
+<script>
+let btn = document.querySelector("#btn");
+let fileinp = document.querySelector("#fileinp");
+btn.addEventListener("click", function (){
+fileinp.click();
+});
+fileinp.addEventListener("change", function (files) {
+    const file = files.target.files[0];
+    if (file) {
+       btn.textContent = file.name; 
+    }
+});
+</script>
+</body>
+</html>
